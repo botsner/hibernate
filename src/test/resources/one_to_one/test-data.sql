@@ -1,0 +1,2 @@
+INSERT INTO details (city, phone_number, email) VALUES ('Moscow', '987654', 'pavel@mail.com');
+INSERT INTO employees_oto (name, surname, department, salary, details_id) VALUES ('Pavel', 'Ivanov', 'IT', 1000, 1);
