@@ -1,12 +1,19 @@
 package ru.botsner.hibernate.hibernate_many_to_many.entity;
 
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "section")
+@Setter
+@Getter
+@NoArgsConstructor
 public class Section {
 
     @Id
@@ -26,9 +33,6 @@ public class Section {
     )
     private List<Child> children;
 
-    public Section() {
-    }
-
     public Section(String name) {
         this.name = name;
     }
@@ -38,37 +42,5 @@ public class Section {
             children = new ArrayList<>();
         }
         children.add(child);
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Child> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<Child> children) {
-        this.children = children;
-    }
-
-    @Override
-    public String toString() {
-        return "Section{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
     }
 }
